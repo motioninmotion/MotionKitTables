@@ -4,6 +4,14 @@ class EntryCellLayout < MK::Layout
       add UILabel, :label do
         text 'Testing'
         text_alignment NSTextAlignmentCenter
+        # autoresizing_mask :fill_top, :fill_left
+
+        constraints do
+          x 0; y 0
+          size.equals(:superview)
+          # width.equals(:superview)
+          # height.equals(:superview)
+        end
       end
     end
   end

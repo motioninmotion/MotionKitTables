@@ -11,7 +11,8 @@ class ListController < UITableViewController
 
   def tableView(table_view, cellForRowAtIndexPath: index_path)
     cell = table_view.dequeueReusableCellWithIdentifier(EntryCell::ID) || begin
-      EntryCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: EntryCell::ID)
+      c = EntryCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: EntryCell::ID)
+      EntryCellLayout.new(root: c).build.view
     end
   end
 
