@@ -5,11 +5,11 @@ class ListController < UITableViewController
     setTitle 'Entries'
   end
 
-  def tableView(table_view, numberOfRowsInSection: section)
+  def tableView(_, numberOfRowsInSection: _)
     data.count
   end
 
-  def tableView(table_view, cellForRowAtIndexPath: index_path)
+  def tableView(table_view, cellForRowAtIndexPath: _)
     cell = table_view.dequeueReusableCellWithIdentifier(EntryCell::ID) || begin
       c = EntryCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: EntryCell::ID)
       EntryCellLayout.new(root: c).build.view

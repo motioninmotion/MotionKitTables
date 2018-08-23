@@ -8,9 +8,9 @@ class EntryCellLayout < MK::Layout
 
         constraints do
           x 0; y 0
-          size.equals(:superview)
-          # width.equals(:superview)
-          # height.equals(:superview)
+          # size.equals(:superview)
+          width.equals(:superview)
+          height 50
         end
       end
     end
